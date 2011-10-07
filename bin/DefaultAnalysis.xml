@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="samma.xsd">
+	<analysis-set name="no-luma" purpose="All rules except Luma">
+		<analysis name="SampleCount" type="PassFailAnalysis">
+			<fileValue format="time" xpath="/SammaSolo/Metadata/Log/SampleCount"/>
+			<checkFile GT="3600"/>
+		</analysis>
+		<analysis code="DN" name="DOC Number" type="AverageAnalysis">
+			<average secs="10"/>
+			<checkValid LT="20"/>
+			<checkFatal/>
+			<checkRangeError skipLast="false"/>
+		</analysis>
+		<analysis code="RF" name="RF Level" type="XmlAnalysis">
+			<checkValid GT="63.75"/>
+			<checkFatal/>
+			<checkRangeError minLenSec="1" skipFirstSec="30" skipLast="true"/>
+		</analysis>
+	</analysis-set>
+	<analysis-set name="200-UN" purpose="No luma and allows for 10 seconds of dropout and low RF">
+		<analysis code="DN" name="DOC Number" type="AverageAnalysis">
+			<average secs="10"/>
+			<checkValid LT="20"/>
+			<checkFatal/>
+			<checkRangeError/>
+		</analysis>
+		<analysis code="RF" name="RF Level">
+			<checkValid GT="63.75"/>
+			<checkFatal/>
+			<checkRangeError minLenSec="10" skipFirstSec="30" skipLast="true"/>
+		</analysis>
+		<analysis name="SampleCount" type="PassFailAnalysis">
+			<fileValue format="time" xpath="/SammaSolo/Metadata/Log/SampleCount"/>
+			<checkFile GT="3600"/>
+		</analysis>
+	</analysis-set>
+	<analysis-set name="none" purpose="Run no tests">
+	</analysis-set>
+	<analysis-set name="default" purpose="Default rules defined when analysis program was created.">
+		<analysis code="DN" name="DOC Number" type="AverageAnalysis">
+			<average secs="2"/>
+			<checkValid LT="20"/>
+			<checkFatal/>
+			<checkRangeError skipLast="false"/>
+		</analysis>
+		<analysis code="RF" name="RF Level" type="XmlAnalysis">
+			<checkValid GT="63.75"/>
+			<checkFatal/>
+			<checkRangeError minLenSec="1" skipFirstSec="30" skipLast="true"/>
+		</analysis>
+		<analysis code="LA" name="Luma Average" type="XmlAnalysis">
+			<checkValid GTE="15"/>
+			<checkFatal/>
+			<checkRangeError minLenSec="180" skipLast="false"/>
+		</analysis>
+		<analysis code="LA" name="Luma Average" type="XmlAnalysis">
+			<checkValid LTE="235"/>
+			<checkFatal/>
+			<checkRangeError minLenSec="5" skipLast="false"/>
+		</analysis>
+		<analysis name="SampleCount" type="PassFailAnalysis">
+			<fileValue format="time" xpath="/SammaSolo/Metadata/Log/SampleCount"/>
+			<checkFile GT="3600"/>
+		</analysis>
+	</analysis-set>
+	<analysis-set name="slates" purpose="identify slates in file">
+		<analysis code="LA" name="Luma Average">
+			<checkValid LTE="15"/>
+			<checkFatal/>
+			<checkRangeError minLenSec="10"/>
+		</analysis>
+		<analysis name="SampleCount" type="PassFailAnalysis">
+			<fileValue format="time" xpath="/SammaSolo/Metadata/Log/SampleCount"/>
+			<checkFile GT="36000"/>
+		</analysis>
+	</analysis-set>
+	<analysis-set name="twenty" purpose="At least twenty seconds">
+		
+	</analysis-set>
+</doc>
