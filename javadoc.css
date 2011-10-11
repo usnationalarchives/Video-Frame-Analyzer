@@ -1,0 +1,29 @@
+table.bordered {
+ border-collapse: collapse;
+}
+table.bordered td, table.bordered th {
+  border: solid thin black;
+  padding: 4px;
+}
+
+table.overview td, table.overview th {
+	width: 150px;
+	text-align: center;
+	font-size: 12px;
+}
+
+tr.custom {
+	background-color: #EEFFFF;
+}
+
+tr.img {
+	background-color: #FFEEFF;
+}
+
+div.clarification {
+	font-size: 11px;
+	font-weight: normal;
+	font-style: italic;
+	margin: 0px;
+	padding: 0px;
+}
