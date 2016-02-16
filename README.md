@@ -17,4 +17,4 @@ All comments, messages, pull requests, and other submissions received through of
 
 ## Contributions
 
-We welcome contributions. If you would like to contribute to the project you can do so by forking the repository and submitting your changes in a pull request. You can submit issues using [GitHub Issues]().
+We welcome contributions. If you would like to contribute to the project you can do so by forking the repository and submitting your changes in a pull request. You can submit issues using [GitHub Issues](https://github.com/usnationalarchives/Video-Frame-Analyzer/issues).
