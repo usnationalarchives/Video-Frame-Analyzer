@@ -1,5 +1,5 @@
 ## Video Frame Analyzer
-
+This software automates the quality control process for digitized video files. It also provides analysis for video frame level metadata.
 
 ## Public Domain
 
