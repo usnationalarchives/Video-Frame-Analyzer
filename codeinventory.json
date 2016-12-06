@@ -1,0 +1,16 @@
+﻿{
+  "name": "Video Frame Aanalyzer",
+  "description": "Software that automates the quality control process for digitized video files and provides analysis for video frame level metadata.",
+  "license": "https://github.com/usnationalarchives/Video-Frame-Analyzer/commit/4aa1ec3a08d5847015d669616f70dd8d5dccc9ab",
+  "openSourceProject": 1,
+  "governmentWideReuseProject": 1,
+  "tags": [
+    "NARA",
+    "video",
+    "metadata",
+    "java"
+  ],
+  "contact": {
+    "email": "leslie.johnston@nara.gov"
+  }
+}
